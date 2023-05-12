@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { path } from "./utilities/constants";
+import { Home, Login } from "./pages/Public";
+// import { motion, useScroll, useSpring } from "framer-motion";
 
 function App() {
+  // const { scrollYProgress } = useScroll();
+  // const scaleX = useSpring(scrollYProgress, {
+  //   stiffness: 100,
+  //   damping: 30,
+  //   restDelta: 0.001
+  // })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App h-screen mx-auto">
+      {/* <motion.div className="progress-bar" style={{ scaleX }} /> */}
+        <Routes>
+          <Route path={path.HOME} element={<Home />}>
+            <Route path={path.LOGIN} element={<Login />}/>
+          </Route>
+        </Routes>
     </div>
   );
 }
