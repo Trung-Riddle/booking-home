@@ -1,3 +1,3 @@
-export { default as Login } from "./Login"
-export { default as Home } from "./Home"
-export { default as Navigate } from "./Navigate"
+export { default as Account } from "./Account/Account"
+export { default as Home } from "./Home/Home"
+export { default as Navigate } from "./Navigate/Navigate"

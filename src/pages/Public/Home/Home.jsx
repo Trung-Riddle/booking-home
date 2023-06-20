@@ -1,6 +1,6 @@
-import Header from "./Header"
+import Header from "../Header/Header"
 import { Outlet } from "react-router-dom"
-import Navigate from "./Navigate"
+import Navigate from "../Navigate/Navigate"
 
 const Home = () => {
   return (
