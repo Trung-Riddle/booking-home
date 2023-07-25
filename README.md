@@ -90,3 +90,18 @@ Lúc này bạn chỉ cần chạy
 - `npm run prettier:fix`: Tự fix lỗi prettier format
 
 ### 4.7. Thêm file `.prettierrignore` và `.eslintignore` để ignore những file bạn không muốn prettier và eslint format
+
+
+
+src/
+    component/
+    colors/
+    hooks/
+    mocks/
+    pages/
+    store/
+    services/
+            utils/
+                  routes/
+                  icons/
+    

@@ -1,7 +1,5 @@
 import React, { memo } from 'react'
 
-
-
 const InputForm = ({ label, bgColor, type, plText, name, value, setValue, field, invalidFields, setInvalidFields }) => {
   return (
     <div className='flex flex-col mt-2'>

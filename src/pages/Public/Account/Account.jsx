@@ -1,7 +1,7 @@
-import { InputForm, Button } from '../../../components'
+import { InputForm, Button } from 'components'
 import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import * as actions from '../../../store/actions'
+import * as actions from 'store/actions'
 import { useDispatch, useSelector } from 'react-redux'
 import Swal from 'sweetalert2'
 
@@ -28,17 +28,16 @@ const Account = () => {
   }, [message, update])
   const handleSubmit = async () => {
     let finalPayload = isRegister
-      ? payload
+      ? payload // is Register
       : {
           phone: payload.phone,
           password: payload.password
-        }
+        } // is Login
 
     let invalids = validate(finalPayload)
     if (invalids === 0) {
       isRegister ? dispatch(actions.register(finalPayload)) : dispatch(actions.login(finalPayload))
     }
-    console.log(invalids)
   }
   const validate = (payload) => {
     let invalids = 0

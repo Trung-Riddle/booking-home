@@ -1,29 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { apiGetCategory } from 'services/category'
+import { formatVietnameseToString } from 'utilities/Common/formatString'
 
-const navs = [
-  { name: 'Trang Chủ', path: 'home' },
-  { name: 'Cho thuê phòng trọ', path: 'cho-thue-phong-tro' },
-  { name: 'Nhà cho thuê', path: 'nha-cho-thue' },
-  { name: 'Cho thuê căn hộ', path: 'cho-thue-can-ho' },
-  { name: 'Cho thuê mặt bằng', path: 'cho-thue-mat-bang' },
-  { name: 'Tìm người ở ghép', path: 'tim-nguoi-o-ghep' }
-]
 const Navigate = () => {
+  const [categories, setCategories] = useState([])
+  useEffect(() => {
+    const fetchApiCategory = async () => {
+      const response = await apiGetCategory()
+      if (response?.data?.err === 0) {
+        setCategories(response.data.response)
+      }
+    }
+    fetchApiCategory()
+  }, [])
   return (
     <div className='w-full py-3 px-4 bg-white'>
       <div className='w-1200 mx-auto'>
-        {navs?.length > 0 &&
-          navs.map((nav, index) => {
+      <NavLink className={({isActive}) => isActive ? 'bg-rose-500' : 'hover:bg-rose-500'} to={'/'}>Trang Chủ</NavLink>
+        {categories?.length > 0 &&
+          categories.map((nav) => {
             return (
-              <div key={index}>
-                <NavLink to={nav.path}>{nav.name}</NavLink>
-              </div>
+                <NavLink key={nav.code} className={({isActive}) => isActive ? ' bg-rose-500' : 'hover:bg-rose-500'} to={formatVietnameseToString(nav.value)}>{nav.value}</NavLink>
             )
           })}
       </div>
     </div>
   )
 }
-
 export default Navigate

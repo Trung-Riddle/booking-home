@@ -49,4 +49,15 @@ body {
   transform-origin: 0%;
 }
 
+.shadow-main {
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+
+// transition
+.tst-color {
+  transition: color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
+}
+
+
 

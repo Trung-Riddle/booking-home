@@ -1,12 +1,12 @@
 import { useCallback } from 'react'
-import Search from '../../../components/Search'
+import Search from 'components/Search'
 import { TbBrandBooking } from 'react-icons/tb'
-import { Button } from '../../../components'
-import icons from '../../../utilities/icons'
+import { Button } from 'components'
+import icons from 'utilities/icons'
 import { useNavigate, Link } from 'react-router-dom'
-import { path } from '../../../utilities/constants'
+import { path } from 'utilities/constants'
 import { useSelector, useDispatch } from 'react-redux'
-import * as actions from '../../../store/actions'
+import * as actions from 'store/actions'
 
 const { RiAddCircleLine, BiLogOutCircle } = icons
 
@@ -16,7 +16,7 @@ const Header = () => {
   const dispatch = useDispatch()
   const goLogin = useCallback((flag) => {
     navigate(path.ACCOUNT, { state: { flag } })
-  })
+  }, [])
   return (
     <div className='flex py-4 bg-slate-200 px-3 shadow-lg'>
       <Link to={'/'} className='logo-main text-grey-1 flex items-center w-32'>

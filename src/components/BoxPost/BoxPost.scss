@@ -1,0 +1,18 @@
+.container-text {
+  max-height: 3.6em; /* Chiều cao tối đa là 3 dòng */
+  overflow: hidden;
+  .text {
+    line-height: 1.2em; /* Chiều cao của mỗi dòng */
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* Số dòng hiển thị tối đa */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+  }
+}
+.blur-black {
+  background-color: rgba(0, 0, 0, 0.343);
+  backdrop-filter: blur(2px);
+}
